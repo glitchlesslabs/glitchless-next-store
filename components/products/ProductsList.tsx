@@ -22,7 +22,7 @@ function ProductsList({ products }: { products: Product[] }) {
                       src={image}
                       alt={name}
                       fill
-                      sizes="(max-width: 768px) 100vw,(max-width: 768px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 768px) 50vw, 33vw"
                       priority
                       className="w-full rounded object-cover"
                     />

@@ -23,7 +23,7 @@ function ProductsGrid({ products = [] }: { products: Product[] }) {
                       src={image}
                       alt={name}
                       fill
-                      sizes="(max-width:768px) 100vw,(max-width:1200px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       priority
                       className="w-full transform rounded object-cover transition-transform duration-500 group-hover:scale-110"
                     />
