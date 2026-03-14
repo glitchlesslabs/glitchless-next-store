@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
+import Navbar from '@/components/navbar/Navbar';
+import Container from '@/components/global/Container';
 
 const fontSans = Geist({
   subsets: ['latin'],
@@ -37,7 +39,10 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Navbar />
+          <Container className="py-20">{children}</Container>
+        </ThemeProvider>
       </body>
     </html>
   );
