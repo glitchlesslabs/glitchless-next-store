@@ -1,4 +1,25 @@
-function CartButton() {
-  return <div>CartButton</div>;
+import Link from 'next/link';
+import { LuShoppingCart } from 'react-icons/lu';
+import { Button } from '../ui/button';
+
+async function CartButton() {
+  // temp
+  const numItemsInCart = 9;
+
+  return (
+    <Button
+      asChild
+      variant="outline"
+      size="icon"
+      className="relative flex items-center justify-center"
+    >
+      <Link href="/cart">
+        <LuShoppingCart />
+        <span className="absolute -top-3 -right-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs text-white">
+          {numItemsInCart}
+        </span>
+      </Link>
+    </Button>
+  );
 }
 export default CartButton;
