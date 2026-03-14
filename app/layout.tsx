@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/navbar/Navbar';
 import Container from '@/components/global/Container';
+import Providers from './providers';
 
 const fontSans = Geist({
   subsets: ['latin'],
@@ -39,10 +40,10 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>
+        <Providers>
           <Navbar />
           <Container className="py-20">{children}</Container>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
