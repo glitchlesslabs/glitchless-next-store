@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import Container from '../global/Container';
 import CartButton from './CartButton';
 import DarkMode from './DarkMode';
-import LinksDropdown from './LinksDropdown';
+import LinksDropdown from './LinksDropdownWrapper';
 import Logo from './Logo';
 import NavSearch from './NavSearch';
 

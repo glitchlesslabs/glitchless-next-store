@@ -1,3 +1,5 @@
+'use client';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,13 +15,19 @@ import UserIcon from './UserIcon';
 import { Show, SignInButton, SignUpButton } from '@clerk/nextjs';
 import SignOutLink from './SignOutLink';
 
-function LinksDropdown() {
+function LinksDropdown({
+  isAdmin,
+  profileImage,
+}: {
+  isAdmin: boolean;
+  profileImage: string | null;
+}) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="flex max-w-25 gap-4">
           <LuAlignLeft className="h-6 w-6" />
-          <UserIcon />
+          <UserIcon profileImage={profileImage} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="start" sideOffset={10}>
@@ -38,6 +46,7 @@ function LinksDropdown() {
         </Show>
         <Show when="signed-in">
           {links.map((link) => {
+            if (link.label === 'dashboard' && !isAdmin) return null;
             return (
               <DropdownMenuItem key={link.href}>
                 <Link href={link.href} className="w-full capitalize">
