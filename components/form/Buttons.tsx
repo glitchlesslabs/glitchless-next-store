@@ -1,7 +1,7 @@
 'use client';
 
 import { ReloadIcon } from '@radix-ui/react-icons';
-import { useFormStatus } from 'react-dom';
+import { useFormState, useFormStatus } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { SignInButton } from '@clerk/nextjs';
@@ -68,6 +68,42 @@ export const IconButton = ({ actionType }: { actionType: actionType }) => {
         <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
       ) : (
         renderIcon()
+      )}
+    </Button>
+  );
+};
+
+export const CardSignInButton = () => {
+  return (
+    <SignInButton mode="modal">
+      <Button
+        type="button"
+        size="icon"
+        variant="outline"
+        className="cursor-pointer p-2"
+      >
+        <FaRegHeart />
+      </Button>
+    </SignInButton>
+  );
+};
+
+export const CardSubmitButton = ({ isFavorite }: { isFavorite: boolean }) => {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button
+      type="submit"
+      size="icon"
+      variant="outline"
+      className="cursor-pointer p-2"
+    >
+      {pending ? (
+        <ReloadIcon className="animate-spin" />
+      ) : isFavorite ? (
+        <FaHeart />
+      ) : (
+        <FaRegHeart />
       )}
     </Button>
   );
