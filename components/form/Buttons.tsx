@@ -8,17 +8,7 @@ import { SignInButton } from '@clerk/nextjs';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { LuTrash2, LuPen } from 'react-icons/lu';
 
-type btnSize =
-  | 'default'
-  | 'lg'
-  | 'sm'
-  | 'xs'
-  | 'icon'
-  | 'icon-xs'
-  | 'icon-sm'
-  | 'icon-lg'
-  | null
-  | undefined;
+type btnSize = 'default' | 'lg' | 'sm';
 
 type SubmitButtonProps = {
   className?: string;
@@ -26,7 +16,11 @@ type SubmitButtonProps = {
   size?: btnSize;
 };
 
-export function SubmitButton({ className = '', text = 'submit', size = 'lg' }) {
+export function SubmitButton({
+  className = '',
+  text = 'submit',
+  size = 'lg',
+}: SubmitButtonProps) {
   const { pending } = useFormStatus();
 
   return (
