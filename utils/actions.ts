@@ -178,16 +178,20 @@ export const updateProductImageAction = async (
 
 export const fetchFavoriteId = async ({ productId }: { productId: string }) => {
   const user = await getAuthUser();
-  const favorite = await db.favorite.findFirst({
-    where: {
-      productId,
-      clerkId: user.id,
-    },
-    select: {
-      id: true,
-    },
-  });
-  return favorite?.id || null;
+  try {
+    const favorite = await db.favorite.findFirst({
+      where: {
+        productId,
+        clerkId: user.id,
+      },
+      select: {
+        id: true,
+      },
+    });
+    return favorite?.id || null;
+  } catch (error) {
+    renderError(error);
+  }
 };
 
 export const toggleFavoriteAction = async (prevState: {
