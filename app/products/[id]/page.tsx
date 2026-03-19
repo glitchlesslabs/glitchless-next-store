@@ -5,6 +5,7 @@ import { formatCurrency } from '@/utils/format';
 import FavoriteToggleButton from '@/components/products/FavoriteToggleButton';
 import AddToCart from '@/components/single-product/AddToCart';
 import ProductRating from '@/components/single-product/ProductRating';
+import ShareButton from '@/components/single-product/ShareButton';
 
 async function SingleProductPage({
   params,
@@ -41,7 +42,10 @@ async function SingleProductPage({
         <div>
           <div className="flex items-center gap-x-8">
             <h1 className="text-3xl font-bold capitalize">{name}</h1>
-            <FavoriteToggleButton productId={id} />
+            <div className="flex items-center gap-x-2">
+              <FavoriteToggleButton productId={id} />
+              <ShareButton name={product.name} productId={id} />
+            </div>
           </div>
           <ProductRating productId={id} />
           <h4 className="mt-2 text-xl">{company}</h4>
