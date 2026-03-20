@@ -7,7 +7,7 @@ import { CardSubmitButton } from '../form/Buttons';
 
 type FavoriteToggleFormProps = {
   productId: string;
-  favoriteId: string | null;
+  favoriteId: string | null | undefined;
 };
 
 function FavoriteToggleForm({

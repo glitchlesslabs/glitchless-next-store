@@ -201,7 +201,7 @@ export const fetchFavoriteId = async ({ productId }: { productId: string }) => {
 
 export const toggleFavoriteAction = async (prevState: {
   productId: string;
-  favoriteId: string | null;
+  favoriteId: string | null | undefined;
   pathname: string;
 }) => {
   const user = await getAuthUser();
