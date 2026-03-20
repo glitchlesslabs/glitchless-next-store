@@ -16,7 +16,7 @@ function CartItemsList({ cartItems }: { cartItems: CartItemWithProduct[] }) {
           >
             <FirstColumn image={image} name={name} />
             <SecondColumn name={name} company={company} productId={productId} />
-            <ThirdColumn />
+            <ThirdColumn id={id} quantity={amount} />
             <FourthColumn price={price} />
           </Card>
         );

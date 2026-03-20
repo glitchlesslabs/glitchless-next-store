@@ -42,10 +42,6 @@ export const SecondColumn = ({
   );
 };
 
-export const ThirdColumn = () => {
-  return <div>ThirdColumn</div>;
-};
-
 export const FourthColumn = ({ price }: { price: number }) => {
   return <p className="font-medium md:ml-auto">{formatCurrency(price)}</p>;
 };
