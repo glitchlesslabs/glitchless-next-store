@@ -65,7 +65,7 @@ export const fetchSingleProduct = async (productId: string) => {
 };
 
 export const createProductAction = async (
-  prevState: any,
+  _prevState: any,
   formData: FormData
 ): Promise<{ message: string }> => {
   const user = await getAuthUser();
@@ -241,7 +241,7 @@ export const fetchUserFavorites = async () => {
 };
 
 export const createReviewAction = async (
-  prevState: any,
+  _prevState: any,
   formData: FormData
 ) => {
   const user = await getAuthUser();
@@ -260,7 +260,7 @@ export const createReviewAction = async (
 
     return { message: 'review submitted successfully' };
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
 };
 
@@ -316,10 +316,7 @@ export const fetchProductReviewsByUser = async () => {
   return reviews;
 };
 
-export const deleteReviewAction = async (
-  prevState: { reviewId: string },
-  _formData: FormData
-) => {
+export const deleteReviewAction = async (prevState: { reviewId: string }) => {
   const { reviewId } = prevState;
   const user = await getAuthUser();
   try {

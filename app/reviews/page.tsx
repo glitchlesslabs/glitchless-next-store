@@ -19,9 +19,11 @@ async function ReviewsPage() {
           const { comment, rating } = review;
           const { name, image } = review.product;
           const reviewInfo = { comment, rating, name, image };
-          return <ReviewCard key={review.id} reviewInfo={reviewInfo}>
-            <DeleteReview reviewId={review.id} />
-          </ReviewCard>;
+          return (
+            <ReviewCard key={review.id} reviewInfo={reviewInfo}>
+              <DeleteReview reviewId={review.id} />
+            </ReviewCard>
+          );
         })}
       </section>
     </>
