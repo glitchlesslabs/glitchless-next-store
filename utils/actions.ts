@@ -316,7 +316,10 @@ export const fetchProductReviewsByUser = async () => {
   return reviews;
 };
 
-export const deleteReviewAction = async (prevState: { reviewId: string }) => {
+export const deleteReviewAction = async (
+  prevState: { reviewId: string },
+  _formData: FormData
+) => {
   const { reviewId } = prevState;
   const user = await getAuthUser();
   try {
@@ -329,7 +332,7 @@ export const deleteReviewAction = async (prevState: { reviewId: string }) => {
     revalidatePath('/reviews');
     return { message: 'review deleted successfully' };
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
 };
 export const findExistingReview = async () => {};
