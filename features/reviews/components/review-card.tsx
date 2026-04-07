@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import Rating from './rating';
-import Comment from './comment';
+import { Rating } from './rating';
+import { Comment } from './comment';
 import Image from 'next/image';
 
 type ReviewCardProps = {
@@ -13,7 +13,7 @@ type ReviewCardProps = {
   children?: React.ReactNode;
 };
 
-export default function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
+export const ReviewCard = ({ reviewInfo, children }: ReviewCardProps) => {
   return (
     <Card className="relative">
       <CardHeader>
@@ -39,4 +39,4 @@ export default function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
       <div className="absolute top-3 right-3">{children}</div>
     </Card>
   );
-}
+};

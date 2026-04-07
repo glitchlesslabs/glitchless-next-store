@@ -5,9 +5,9 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { createReviewAction } from '@/features/reviews/actions';
 import { useUser } from '@clerk/nextjs';
-import RatingInput from './rating-input';
+import { RatingInput } from './rating-input';
 
-export default function SubmitReview({ productId }: { productId: string }) {
+export const SubmitReview = ({ productId }: { productId: string }) => {
   const [isReviewFormVisible, setIsReviewFormVisible] = useState(false);
   const { user } = useUser();
   return (
@@ -41,4 +41,4 @@ export default function SubmitReview({ productId }: { productId: string }) {
       )}
     </div>
   );
-}
+};

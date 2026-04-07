@@ -7,13 +7,13 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-export default function RatingInput({
+export const RatingInput = ({
   name,
   labelText,
 }: {
   name: string;
   labelText?: string;
-}) {
+}) => {
   const numbers = Array.from({ length: 5 }, (_, i) => {
     const value = i + 1;
     return value.toString();
@@ -39,4 +39,4 @@ export default function RatingInput({
       </Select>
     </div>
   );
-}
+};
