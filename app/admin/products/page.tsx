@@ -1,4 +1,4 @@
-import EmptyList from '@/components/global/EmptyList';
+import { EmptyList } from '@/components/global';
 import { deleteProductAction, fetchAdminProducts } from '@/utils/actions';
 import Link from 'next/link';
 

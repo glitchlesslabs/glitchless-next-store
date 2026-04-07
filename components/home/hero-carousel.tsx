@@ -14,7 +14,7 @@ import Image from 'next/image';
 
 const carouselImages = [hero1, hero2, hero3, hero4];
 
-function HeroCarousel() {
+export const HeroCarousel = () => {
   return (
     <div className="hidden lg:block">
       <Carousel>
@@ -40,5 +40,4 @@ function HeroCarousel() {
       </Carousel>
     </div>
   );
-}
-export default HeroCarousel;
+};

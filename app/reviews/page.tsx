@@ -1,4 +1,4 @@
-import SectionTitle from '@/components/global/SectionTitle';
+import { SectionTitle } from '@/components/global';
 import {
   DeleteReview,
   fetchProductReviewsByUser,

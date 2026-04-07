@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import { currentUser } from '@clerk/nextjs/server';
 import { CartItemsList, CartTotals } from '@/components/cart';
-import SectionTitle from '@/components/global/SectionTitle';
+import { SectionTitle } from '@/components/global';
 import { fetchOrCreateCart, updateCart } from '@/utils/actions';
 
 async function CartPage() {

@@ -8,7 +8,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-import SectionTitle from '@/components/global/SectionTitle';
+import { SectionTitle } from '@/components/global';
 import { fetchUserOrders } from '@/utils/actions';
 import { formatCurrency, formatDate } from '@/utils/format';
 

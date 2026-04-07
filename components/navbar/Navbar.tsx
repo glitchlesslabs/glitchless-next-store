@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import Container from '../global/Container';
+import { Container } from '../global';
 import CartButton from './CartButton';
 import DarkMode from './DarkMode';
 import LinksDropdown from './LinksDropdownWrapper';

@@ -1,9 +1,8 @@
 import { fetchFeaturedProducts } from '@/utils/actions';
-import EmptyList from '../global/EmptyList';
-import SectionTitle from '../global/SectionTitle';
+import { EmptyList, SectionTitle } from '../global';
 import ProductsGrid from '../products/ProductsGrid';
 
-async function FeaturedProducts() {
+export const FeaturedProducts = async () => {
   const products = await fetchFeaturedProducts();
   if (products.length === 0) return <EmptyList />;
 
@@ -13,5 +12,5 @@ async function FeaturedProducts() {
       <ProductsGrid products={products} />
     </section>
   );
-}
+};
 export default FeaturedProducts;

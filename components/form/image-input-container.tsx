@@ -24,7 +24,7 @@ export const ImageInputContainer = (props: ImageInputContainerProps) => {
         src={image}
         width={200}
         height={200}
-        className="mb-4 h-[200px] w-[200px] rounded object-cover"
+        className="mb-4 h-50 w-50 rounded object-cover"
         alt={name}
         priority
       />

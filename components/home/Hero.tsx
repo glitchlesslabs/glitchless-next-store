@@ -1,8 +1,8 @@
 import Link from 'next/link';
+import { HeroCarousel } from './hero-carousel';
 import { Button } from '../ui/button';
-import HeroCarousel from './HeroCarousel';
 
-function Hero() {
+export const Hero = () => {
   return (
     <section className="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div>
@@ -23,5 +23,4 @@ function Hero() {
       <HeroCarousel />
     </section>
   );
-}
-export default Hero;
+};

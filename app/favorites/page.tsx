@@ -1,4 +1,4 @@
-import SectionTitle from '@/components/global/SectionTitle';
+import { SectionTitle } from '@/components/global';
 import ProductsGrid from '@/components/products/ProductsGrid';
 import { fetchUserFavorites } from '@/features/favorites/queries';
 

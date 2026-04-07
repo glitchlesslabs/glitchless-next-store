@@ -1,7 +1,7 @@
 import { Card, CardContent } from '../ui/card';
 import { Skeleton } from '../ui/skeleton';
 
-function LoadingContainer() {
+export const LoadingContainer = () => {
   return (
     <div className="grid gap-4 pt-12 md:grid-cols-2 lg:grid-cols-3">
       <LoadingProduct />
@@ -9,7 +9,7 @@ function LoadingContainer() {
       <LoadingProduct />
     </div>
   );
-}
+};
 
 function LoadingProduct() {
   return (
@@ -22,5 +22,3 @@ function LoadingProduct() {
     </Card>
   );
 }
-
-export default LoadingContainer;
