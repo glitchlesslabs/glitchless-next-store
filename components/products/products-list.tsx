@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Product } from '@/generated/prisma/client';
 import Image from 'next/image';
-import FavoriteToggleButton from '../../features/favorites/components/FavoriteToggleButton';
+import { FavoriteToggleButton } from '@/features/favorites';
 
 export const ProductsList = ({ products }: { products: Product[] }) => {
   return (

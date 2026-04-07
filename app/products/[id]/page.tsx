@@ -4,12 +4,11 @@ import {
   ShareButton,
 } from '@/components/single-product';
 import { fetchSingleProduct } from '@/utils/actions';
-import { findExistingReview } from '@/features/reviews/queries';
+import { findExistingReview } from '@/features/reviews';
 import Image from 'next/image';
 import { formatCurrency } from '@/utils/format';
-import FavoriteToggleButton from '@/features/favorites/components/FavoriteToggleButton';
-import ProductRating from '@/features/favorites/components/ProductRating';
-import { ProductReviews, SubmitReview } from '@/features/reviews/components';
+import { FavoriteToggleButton, ProductRating } from '@/features/favorites';
+import { ProductReviews, SubmitReview } from '@/features/reviews';
 import { currentUser } from '@clerk/nextjs/server';
 
 async function SingleProductPage({

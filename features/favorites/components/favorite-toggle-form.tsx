@@ -10,10 +10,10 @@ type FavoriteToggleFormProps = {
   favoriteId: string | null | undefined;
 };
 
-function FavoriteToggleForm({
+export const FavoriteToggleForm = ({
   productId,
   favoriteId,
-}: FavoriteToggleFormProps) {
+}: FavoriteToggleFormProps) => {
   const pathname = usePathname();
   const toggleAction = toggleFavoriteAction.bind(null, {
     productId,
@@ -25,5 +25,4 @@ function FavoriteToggleForm({
       <CardSubmitButton isFavorite={favoriteId ? true : false} />
     </FormContainer>
   );
-}
-export default FavoriteToggleForm;
+};
