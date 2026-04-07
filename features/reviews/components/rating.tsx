@@ -1,7 +1,6 @@
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
 export default function Rating({ rating }: { rating: number }) {
-  // rating = 2
   const stars = Array.from({ length: 5 }, (_, i) => i + 1 <= rating);
   return (
     <div className="flex items-center gap-x-1">
