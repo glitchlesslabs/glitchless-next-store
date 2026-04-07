@@ -1,13 +1,13 @@
 import BreadCrumbs from '@/components/single-product/BreadCrumbs';
-import { fetchSingleProduct, findExistingReview } from '@/utils/actions';
+import { fetchSingleProduct } from '@/utils/actions';
+import { findExistingReview } from '@/features/reviews/queries';
 import Image from 'next/image';
 import { formatCurrency } from '@/utils/format';
 import FavoriteToggleButton from '@/components/products/FavoriteToggleButton';
 import AddToCart from '@/components/single-product/AddToCart';
 import ProductRating from '@/components/single-product/ProductRating';
 import ShareButton from '@/components/single-product/ShareButton';
-import ProductReviews from '@/components/reviews/ProductReviews';
-import SubmitReview from '@/components/reviews/SubmitReview';
+import { ProductReviews, SubmitReview } from '@/features/reviews/components';
 import { currentUser } from '@clerk/nextjs/server';
 
 async function SingleProductPage({

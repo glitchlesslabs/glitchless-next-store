@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-function RatingInput({
+export default function RatingInput({
   name,
   labelText,
 }: {
@@ -40,4 +40,3 @@ function RatingInput({
     </div>
   );
 }
-export default RatingInput;

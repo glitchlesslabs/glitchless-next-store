@@ -1,8 +1,12 @@
-import { fetchProductReviews } from '@/utils/actions';
-import SectionTitle from '../global/SectionTitle';
+import { fetchProductReviews } from '@/features/reviews/queries';
+import SectionTitle from '@/components/global/SectionTitle';
 import ReviewCard from './ReviewCard';
 
-async function ProductReviews({ productId }: { productId: string }) {
+export default async function ProductReviews({
+  productId,
+}: {
+  productId: string;
+}) {
   const reviews = await fetchProductReviews(productId);
 
   return (
@@ -24,4 +28,3 @@ async function ProductReviews({ productId }: { productId: string }) {
     </div>
   );
 }
-export default ProductReviews;

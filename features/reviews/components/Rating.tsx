@@ -1,6 +1,6 @@
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
-function Rating({ rating }: { rating: number }) {
+export default function Rating({ rating }: { rating: number }) {
   // rating = 2
   const stars = Array.from({ length: 5 }, (_, i) => i + 1 <= rating);
   return (
@@ -16,4 +16,3 @@ function Rating({ rating }: { rating: number }) {
     </div>
   );
 }
-export default Rating;

@@ -1,4 +1,5 @@
-import 'server-only';
+'use server';
+
 import { getAuthUser } from '@/lib/auth';
 import { renderError } from '@/lib/utils';
 import db from '@/utils/db';

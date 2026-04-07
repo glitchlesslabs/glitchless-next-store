@@ -13,7 +13,7 @@ type ReviewCardProps = {
   children?: React.ReactNode;
 };
 
-function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
+export default function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
   return (
     <Card className="relative">
       <CardHeader>
@@ -40,4 +40,3 @@ function ReviewCard({ reviewInfo, children }: ReviewCardProps) {
     </Card>
   );
 }
-export default ReviewCard;

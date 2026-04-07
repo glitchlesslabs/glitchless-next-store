@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
-function Comment({ comment }: { comment: string }) {
+export default function Comment({ comment }: { comment: string }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
@@ -28,4 +28,3 @@ function Comment({ comment }: { comment: string }) {
     </div>
   );
 }
-export default Comment;
