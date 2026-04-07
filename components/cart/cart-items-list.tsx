@@ -1,11 +1,15 @@
 'use client';
 
 import { Card } from '@/components/ui/card';
-import { FirstColumn, SecondColumn, FourthColumn } from './CartItemColumns';
-import ThirdColumn from './ThirdColumn';
+import { FirstColumn, SecondColumn, FourthColumn } from './cart-item-columns';
+import { ThirdColumn } from './third-column';
 import { CartItemWithProduct } from '@/utils/types';
 
-function CartItemsList({ cartItems }: { cartItems: CartItemWithProduct[] }) {
+export const CartItemsList = ({
+  cartItems,
+}: {
+  cartItems: CartItemWithProduct[];
+}) => {
   return (
     <div>
       {cartItems.map((cartItem) => {
@@ -25,5 +29,4 @@ function CartItemsList({ cartItems }: { cartItems: CartItemWithProduct[] }) {
       })}
     </div>
   );
-}
-export default CartItemsList;
+};

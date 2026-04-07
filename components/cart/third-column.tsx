@@ -7,7 +7,13 @@ import { SubmitButton } from '../form/buttons';
 import { removeCartItemAction, updateCartItemAction } from '@/utils/actions';
 import { toast } from 'sonner';
 
-function ThirdColumn({ quantity, id }: { quantity: number; id: string }) {
+export const ThirdColumn = ({
+  quantity,
+  id,
+}: {
+  quantity: number;
+  id: string;
+}) => {
   const [amount, setAmount] = useState(quantity);
   const [isLoading, setIsLoading] = useState(false);
   const handleAmountChange = async (value: number) => {
@@ -35,5 +41,4 @@ function ThirdColumn({ quantity, id }: { quantity: number; id: string }) {
       </FormContainer>
     </div>
   );
-}
-export default ThirdColumn;
+};

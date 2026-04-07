@@ -1,9 +1,8 @@
-import CartItemsList from '@/components/cart/CartItemsList';
-import CartTotals from '@/components/cart/CartTotals';
+import { redirect } from 'next/navigation';
+import { currentUser } from '@clerk/nextjs/server';
+import { CartItemsList, CartTotals } from '@/components/cart';
 import SectionTitle from '@/components/global/SectionTitle';
 import { fetchOrCreateCart, updateCart } from '@/utils/actions';
-import { currentUser } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
 
 async function CartPage() {
   const user = await currentUser();
