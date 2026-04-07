@@ -3,12 +3,7 @@
 import db from '@/utils/db';
 import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
-import {
-  imageSchema,
-  productSchema,
-  reviewSchema,
-  validateWithZodSchema,
-} from './schemas';
+import { imageSchema, productSchema, validateWithZodSchema } from './schemas';
 import { deleteImage, uploadImage } from './supabase';
 import { revalidatePath } from 'next/cache';
 import { Cart } from '../generated/prisma/client';
@@ -309,12 +304,14 @@ export const addToCartAction = async (prevState: any, formData: FormData) => {
     const productId = formData.get('productId') as string;
     const amount = Number(formData.get('amount'));
     await fetchProduct(productId);
-    const cart = await fetchOrCreateCart({ userId: user?.id });
+    const cart = await fetchOrCreateCart({ userId: user.userId ?? '' });
     await updateOrCreateCartItem({ productId, cartId: cart.id, amount });
     await updateCart(cart);
   } catch (error) {
+    console.log('error: ', error);
     return renderError(error);
   }
+  revalidatePath('/cart');
   redirect('/cart');
 };
 

@@ -8,7 +8,7 @@ import TextAreaInput from '@/components/form/TextAreaInput';
 import { Button } from '@/components/ui/button';
 import { createReviewAction } from '@/features/reviews/actions';
 import { useUser } from '@clerk/nextjs';
-import RatingInput from './RatingInput';
+import RatingInput from './rating-input';
 
 export default function SubmitReview({ productId }: { productId: string }) {
   const [isReviewFormVisible, setIsReviewFormVisible] = useState(false);

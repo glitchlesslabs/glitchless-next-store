@@ -1,6 +1,6 @@
 import { fetchProductReviews } from '@/features/reviews/queries';
 import SectionTitle from '@/components/global/SectionTitle';
-import ReviewCard from './ReviewCard';
+import ReviewCard from './review-card';
 
 export default async function ProductReviews({
   productId,

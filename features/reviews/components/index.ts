@@ -1,9 +1,9 @@
-import Comment from './Comment';
-import ProductReviews from './ProductReviews';
-import Rating from './Rating';
-import RatingInput from './RatingInput';
-import ReviewCard from './ReviewCard';
-import SubmitReview from './SubmitReview';
+import Comment from './comment';
+import ProductReviews from './product-reviews';
+import Rating from './rating';
+import RatingInput from './rating-input';
+import ReviewCard from './review-card';
+import SubmitReview from './submit-review';
 
 export {
   Comment,

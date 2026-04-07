@@ -1,6 +1,6 @@
 import { deleteReviewAction } from '@/features/reviews/actions';
 import { fetchProductReviewsByUser } from '@/features/reviews/queries';
-import ReviewCard from '@/components/reviews/ReviewCard';
+import { ReviewCard } from '@/features/reviews/components';
 import SectionTitle from '@/components/global/SectionTitle';
 import FormContainer from '@/components/form/FormContainer';
 import { IconButton } from '@/components/form/Buttons';
