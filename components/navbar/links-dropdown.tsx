@@ -11,17 +11,17 @@ import { LuAlignLeft } from 'react-icons/lu';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { links } from '@/utils/links';
-import UserIcon from './UserIcon';
+import UserIcon from './user-icon';
 import { Show, SignInButton, SignUpButton } from '@clerk/nextjs';
-import SignOutLink from './SignOutLink';
+import SignOutLink from './sign-out-link';
 
-function LinksDropdown({
+export const LinksDropdown = ({
   isAdmin,
   profileImage,
 }: {
   isAdmin: boolean;
   profileImage: string | null;
-}) {
+}) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -63,5 +63,4 @@ function LinksDropdown({
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
-export default LinksDropdown;
+};

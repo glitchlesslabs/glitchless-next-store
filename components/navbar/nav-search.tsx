@@ -2,9 +2,9 @@
 import { Input } from '../ui/input';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
-import { useState, useEffect, useReducer } from 'react';
+import { useState, useEffect } from 'react';
 
-function NavSearch() {
+export const NavSearch = () => {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const [search, setSearch] = useState(
@@ -39,5 +39,4 @@ function NavSearch() {
       value={search}
     />
   );
-}
-export default NavSearch;
+};

@@ -3,7 +3,7 @@ import { LuShoppingCart } from 'react-icons/lu';
 import { Button } from '../ui/button';
 import { fetchCartItems } from '@/utils/actions';
 
-async function CartButton() {
+export const CartButton = async () => {
   // temp
   const numItemsInCart = await fetchCartItems();
 
@@ -22,5 +22,4 @@ async function CartButton() {
       </Link>
     </Button>
   );
-}
-export default CartButton;
+};

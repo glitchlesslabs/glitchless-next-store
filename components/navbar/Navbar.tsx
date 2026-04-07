@@ -1,16 +1,16 @@
 import { Suspense } from 'react';
 import { Container } from '../global';
-import CartButton from './CartButton';
-import DarkMode from './DarkMode';
-import LinksDropdown from './LinksDropdownWrapper';
-import Logo from './Logo';
-import NavSearch from './NavSearch';
+import { CartButton } from './cart-button';
+import { ModeToggle as DarkMode } from './dark-mode';
+import { LinksDropdownWrapper as LinksDropdown } from './links-dropdown-wrapper';
+import { NavbarLogo } from './navbar-logo';
+import { NavSearch } from './nav-search';
 
-function Navbar() {
+export const Navbar = () => {
   return (
     <nav className="border-b">
       <Container className="flex flex-col flex-wrap py-8 sm:flex-row sm:items-center sm:justify-between">
-        <Logo />
+        <NavbarLogo />
         <Suspense>
           <NavSearch />
         </Suspense>
@@ -22,5 +22,4 @@ function Navbar() {
       </Container>
     </nav>
   );
-}
-export default Navbar;
+};

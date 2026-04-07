@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 
 import './globals.css';
 import { cn } from '@/lib/utils';
-import Navbar from '@/components/navbar/Navbar';
+import { Navbar } from '@/components/navbar';
 import { Container } from '@/components/global';
 import Providers from './providers';
 
