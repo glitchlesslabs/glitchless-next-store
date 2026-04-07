@@ -1,10 +1,10 @@
 'use client';
+
 import { useState } from 'react';
-import { FormContainer, SubmitButton, TextAreaInput } from '@/components/form';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { createReviewAction } from '@/features/reviews/actions';
 import { useUser } from '@clerk/nextjs';
+import { FormContainer, SubmitButton, TextAreaInput } from '@/components/form';
+import { Button, Card } from '@/components/ui';
+import { createReviewAction } from '@/features/reviews/actions';
 import { RatingInput } from './rating-input';
 
 export const SubmitReview = ({ productId }: { productId: string }) => {

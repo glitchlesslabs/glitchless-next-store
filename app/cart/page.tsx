@@ -4,7 +4,7 @@ import { CartItemsList, CartTotals } from '@/components/cart';
 import { SectionTitle } from '@/components/global';
 import { fetchOrCreateCart, updateCart } from '@/utils/actions';
 
-async function CartPage() {
+export default async function CartPage() {
   const user = await currentUser();
 
   if (!user?.id) redirect('/');
@@ -27,4 +27,3 @@ async function CartPage() {
     </>
   );
 }
-export default CartPage;

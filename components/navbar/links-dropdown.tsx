@@ -1,19 +1,19 @@
 'use client';
 
+import Link from 'next/link';
+import { LuAlignLeft } from 'react-icons/lu';
+import { Show, SignInButton, SignUpButton } from '@clerk/nextjs';
+import { links } from '@/utils/links';
+import SignOutLink from './sign-out-link';
+import UserIcon from './user-icon';
 import {
+  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from '@/components/ui/dropdown-menu';
-import { LuAlignLeft } from 'react-icons/lu';
-import Link from 'next/link';
-import { Button } from '../ui/button';
-import { links } from '@/utils/links';
-import UserIcon from './user-icon';
-import { Show, SignInButton, SignUpButton } from '@clerk/nextjs';
-import SignOutLink from './sign-out-link';
+} from '../ui';
 
 export const LinksDropdown = ({
   isAdmin,

@@ -1,17 +1,17 @@
 'use client';
 
-import { Checkbox } from '@/components/ui/checkbox';
+import { Checkbox } from '@/components/ui';
 
 type CheckboxInputProps = {
-  name: string;
-  label: string;
   defaultChecked?: boolean;
+  label: string;
+  name: string;
 };
 
 export const CheckboxInput = ({
-  name,
-  label,
   defaultChecked = false,
+  label,
+  name,
 }: CheckboxInputProps) => {
   return (
     <div className="flex items-center space-x-2">

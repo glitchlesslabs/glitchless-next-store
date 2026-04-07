@@ -1,5 +1,5 @@
-import { fetchProductRating } from '@/features/reviews/queries';
 import { FaStar } from 'react-icons/fa';
+import { fetchProductRating } from '@/features/reviews/queries';
 
 export const ProductRating = async ({ productId }: { productId: string }) => {
   const { count, rating } = await fetchProductRating(productId);

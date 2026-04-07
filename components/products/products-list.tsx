@@ -1,9 +1,9 @@
-import { formatCurrency } from '@/utils/format';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Product } from '@/generated/prisma/client';
-import Image from 'next/image';
 import { FavoriteToggleButton } from '@/features/favorites';
+import { Product } from '@/generated/prisma/client';
+import { formatCurrency } from '@/utils/format';
 
 export const ProductsList = ({ products }: { products: Product[] }) => {
   return (

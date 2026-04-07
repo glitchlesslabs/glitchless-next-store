@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { VscCode } from 'react-icons/vsc';
-import { Button } from '../ui/button';
+import { Button } from '../ui';
 
 export const NavbarLogo = () => {
   return (

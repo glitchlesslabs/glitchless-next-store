@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { LuShoppingCart } from 'react-icons/lu';
-import { Button } from '../ui/button';
 import { fetchCartItems } from '@/utils/actions';
+import { Button } from '../ui';
 
 export const CartButton = async () => {
   // temp

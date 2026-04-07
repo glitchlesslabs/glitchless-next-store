@@ -1,5 +1,4 @@
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
+import { Label, Input } from '../ui';
 
 export const ImageInput = () => {
   const name = 'image';

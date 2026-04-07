@@ -1,8 +1,9 @@
 'use client';
-import { Input } from '../ui/input';
+
 import { useSearchParams, useRouter } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
 import { useState, useEffect } from 'react';
+import { useDebouncedCallback } from 'use-debounce';
+import { Input } from '../ui';
 
 export const NavSearch = () => {
   const searchParams = useSearchParams();

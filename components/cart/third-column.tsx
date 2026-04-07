@@ -1,11 +1,11 @@
 'use client';
+
+import { toast } from 'sonner';
 import { useState } from 'react';
+import { removeCartItemAction, updateCartItemAction } from '@/utils/actions';
 import { SelectProductAmount } from '../single-product/select-product-amount';
 import { Mode } from '../single-product/select-product-amount';
-import { FormContainer } from '../form';
-import { SubmitButton } from '../form/buttons';
-import { removeCartItemAction, updateCartItemAction } from '@/utils/actions';
-import { toast } from 'sonner';
+import { FormContainer, SubmitButton } from '../form';
 
 export const ThirdColumn = ({
   quantity,

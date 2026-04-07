@@ -1,12 +1,6 @@
 'use client';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import { Button } from '../ui/button';
-import { LuShare2 } from 'react-icons/lu';
 
+import { LuShare2 } from 'react-icons/lu';
 import {
   XShareButton,
   EmailShareButton,
@@ -15,6 +9,7 @@ import {
   EmailIcon,
   LinkedinIcon,
 } from 'react-share';
+import { Button, Popover, PopoverContent, PopoverTrigger } from '../ui';
 
 export const ShareButton = ({
   productId,

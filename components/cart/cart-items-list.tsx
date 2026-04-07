@@ -1,9 +1,9 @@
 'use client';
 
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui';
+import { CartItemWithProduct } from '@/utils/types';
 import { FirstColumn, SecondColumn, FourthColumn } from './cart-item-columns';
 import { ThirdColumn } from './third-column';
-import { CartItemWithProduct } from '@/utils/types';
 
 export const CartItemsList = ({
   cartItems,

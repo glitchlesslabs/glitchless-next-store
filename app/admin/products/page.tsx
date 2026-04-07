@@ -1,8 +1,6 @@
-import { EmptyList } from '@/components/global';
-import { deleteProductAction, fetchAdminProducts } from '@/utils/actions';
 import Link from 'next/link';
-
-import { formatCurrency } from '@/utils/format';
+import { FormContainer, IconButton } from '@/components/form';
+import { EmptyList } from '@/components/global';
 import {
   Table,
   TableBody,
@@ -11,10 +9,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { FormContainer, IconButton } from '@/components/form';
+} from '@/components/ui';
+import { deleteProductAction, fetchAdminProducts } from '@/utils/actions';
+import { formatCurrency } from '@/utils/format';
 
-async function AdminProductsPage() {
+export default async function AdminProductsPage() {
   const items = await fetchAdminProducts();
   if (items.length === 0) return <EmptyList />;
   return (
@@ -60,7 +59,6 @@ async function AdminProductsPage() {
     </section>
   );
 }
-export default AdminProductsPage;
 
 function DeleteProduct({ productId }: { productId: string }) {
   const deleteProduct = deleteProductAction.bind(null, { productId });

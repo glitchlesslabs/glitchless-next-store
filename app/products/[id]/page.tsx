@@ -1,17 +1,20 @@
+import Image from 'next/image';
+import { currentUser } from '@clerk/nextjs/server';
 import {
   AddToCart,
   BreadCrumbs,
   ShareButton,
 } from '@/components/single-product';
-import { fetchSingleProduct } from '@/utils/actions';
-import { findExistingReview } from '@/features/reviews';
-import Image from 'next/image';
-import { formatCurrency } from '@/utils/format';
 import { FavoriteToggleButton, ProductRating } from '@/features/favorites';
-import { ProductReviews, SubmitReview } from '@/features/reviews';
-import { currentUser } from '@clerk/nextjs/server';
+import {
+  findExistingReview,
+  ProductReviews,
+  SubmitReview,
+} from '@/features/reviews';
+import { fetchSingleProduct } from '@/utils/actions';
+import { formatCurrency } from '@/utils/format';
 
-async function SingleProductPage({
+export default async function SingleProductPage({
   params,
 }: {
   params: Promise<Record<string, string | string[] | undefined>>;
@@ -67,4 +70,3 @@ async function SingleProductPage({
     </section>
   );
 }
-export default SingleProductPage;

@@ -1,4 +1,4 @@
-function AboutPage() {
+export default function AboutPage() {
   return (
     <section>
       <h1 className="flex flex-wrap items-center justify-center gap-2 text-4xl leading-none font-bold tracking-wide sm:gap-x-6 sm:text-6xl">
@@ -16,4 +16,3 @@ function AboutPage() {
     </section>
   );
 }
-export default AboutPage;

@@ -1,7 +1,7 @@
 'use client';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
-import React, { useCallback, Suspense } from 'react';
+import { useCallback, Suspense } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import {
   EmbeddedCheckoutProvider,

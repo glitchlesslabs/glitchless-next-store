@@ -1,3 +1,4 @@
+import { SectionTitle } from '@/components/global';
 import {
   Table,
   TableBody,
@@ -6,13 +7,11 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-
-import { SectionTitle } from '@/components/global';
+} from '@/components/ui';
 import { fetchUserOrders } from '@/utils/actions';
 import { formatCurrency, formatDate } from '@/utils/format';
 
-async function OrdersPage() {
+export default async function OrdersPage() {
   const orders = await fetchUserOrders();
   return (
     <>
@@ -47,4 +46,3 @@ async function OrdersPage() {
     </>
   );
 }
-export default OrdersPage;

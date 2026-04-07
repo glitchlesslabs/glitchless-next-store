@@ -1,10 +1,10 @@
 'use client';
+
 import { useState } from 'react';
-import { SelectProductAmount } from './select-product-amount';
-import { Mode } from './select-product-amount';
-import { FormContainer, ProductSignInButton, SubmitButton } from '../form';
-import { addToCartAction } from '@/utils/actions';
 import { useAuth } from '@clerk/nextjs';
+import { addToCartAction } from '@/utils/actions';
+import { Mode, SelectProductAmount } from './select-product-amount';
+import { FormContainer, ProductSignInButton, SubmitButton } from '../form';
 
 export const AddToCart = ({ productId }: { productId: string }) => {
   const [amount, setAmount] = useState(1);

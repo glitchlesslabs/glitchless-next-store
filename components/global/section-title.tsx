@@ -1,4 +1,4 @@
-import { Separator } from '../ui/separator';
+import { Separator } from '../ui';
 
 export const SectionTitle = ({ text }: { text: string }) => {
   return (

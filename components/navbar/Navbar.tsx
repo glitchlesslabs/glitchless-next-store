@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
-import { Container } from '../global';
 import { CartButton } from './cart-button';
 import { ModeToggle as DarkMode } from './dark-mode';
 import { LinksDropdownWrapper as LinksDropdown } from './links-dropdown-wrapper';
 import { NavbarLogo } from './navbar-logo';
 import { NavSearch } from './nav-search';
+import { Container } from '../global';
 
 export const Navbar = () => {
   return (

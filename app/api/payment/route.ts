@@ -1,6 +1,6 @@
+import { type NextRequest } from 'next/server';
 import Stripe from 'stripe';
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
-import { type NextRequest } from 'next/server';
 import db from '@/utils/db';
 
 export const POST = async (req: NextRequest) => {

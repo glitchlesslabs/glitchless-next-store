@@ -1,9 +1,9 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { FavoriteToggleButton } from '@/features/favorites';
 import { Product } from '@/generated/prisma/client';
 import { formatCurrency } from '@/utils/format';
-import Link from 'next/link';
 import { Card, CardContent } from '../ui/card';
-import Image from 'next/image';
-import { FavoriteToggleButton } from '@/features/favorites/components';
 
 export const ProductsGrid = ({ products = [] }: { products: Product[] }) => {
   return (

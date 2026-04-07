@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui';
 
 export const Comment = ({ comment }: { comment: string }) => {
   const [isExpanded, setIsExpanded] = useState(false);

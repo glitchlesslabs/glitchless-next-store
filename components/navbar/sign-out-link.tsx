@@ -1,8 +1,8 @@
 'use client';
 
-import { SignOutButton } from '@clerk/nextjs';
 import Link from 'next/link';
 import { toast } from 'sonner';
+import { SignOutButton } from '@clerk/nextjs';
 
 function SignOutLink() {
   const handleLogout = () => {

@@ -1,10 +1,9 @@
+import Link from 'next/link';
+import { LuLayoutGrid, LuList } from 'react-icons/lu';
+import { Button, Separator } from '@/components/ui';
+import { fetchAllProducts } from '@/utils/actions';
 import { ProductsGrid } from './products-grid';
 import { ProductsList } from './products-list';
-import { LuLayoutGrid, LuList } from 'react-icons/lu';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { fetchAllProducts } from '@/utils/actions';
-import Link from 'next/link';
 
 export const ProductsContainer = async ({
   layout,

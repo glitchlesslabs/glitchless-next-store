@@ -1,11 +1,11 @@
-import { Label } from '@/components/ui/label';
 import {
+  Label,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '@/components/ui';
 
 export const RatingInput = ({
   name,

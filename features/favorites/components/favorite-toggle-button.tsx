@@ -1,6 +1,6 @@
 import { currentUser } from '@clerk/nextjs/server';
-import { CardSignInButton } from '../../../components/form/buttons';
-import { fetchFavoriteId } from '@/features/favorites/queries';
+import { CardSignInButton } from '@/components/form';
+import { fetchFavoriteId } from '@/features/favorites';
 import { FavoriteToggleForm } from './favorite-toggle-form';
 
 export const FavoriteToggleButton = async ({

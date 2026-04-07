@@ -1,4 +1,4 @@
-import { fetchProductReviews } from '@/features/reviews/queries';
+import { fetchProductReviews } from '@/features/reviews';
 import { SectionTitle } from '@/components/global';
 import { ReviewCard } from './review-card';
 

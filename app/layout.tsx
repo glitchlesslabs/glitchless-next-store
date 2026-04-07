@@ -1,11 +1,10 @@
-import type { Metadata } from 'next';
-import { ClerkProvider } from '@clerk/nextjs';
-import { Geist, Geist_Mono } from 'next/font/google';
-
 import './globals.css';
-import { cn } from '@/lib/utils';
-import { Navbar } from '@/components/navbar';
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
 import { Container } from '@/components/global';
+import { Navbar } from '@/components/navbar';
+import { cn } from '@/lib/utils';
 import Providers from './providers';
 
 const fontSans = Geist({
