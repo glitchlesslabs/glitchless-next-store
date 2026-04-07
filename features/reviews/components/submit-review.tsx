@@ -1,10 +1,7 @@
 'use client';
 import { useState } from 'react';
-import { SubmitButton } from '@/components/form/Buttons';
-import FormContainer from '@/components/form/FormContainer';
+import { FormContainer, SubmitButton, TextAreaInput } from '@/components/form';
 import { Card } from '@/components/ui/card';
-
-import TextAreaInput from '@/components/form/TextAreaInput';
 import { Button } from '@/components/ui/button';
 import { createReviewAction } from '@/features/reviews/actions';
 import { useUser } from '@clerk/nextjs';

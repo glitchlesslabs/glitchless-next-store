@@ -66,7 +66,7 @@ export const createProductAction = async (
       data: {
         ...validatedFields,
         image: fullPath,
-        clerkId: user.id,
+        clerkId: user.userId!,
       },
     });
   } catch (error) {

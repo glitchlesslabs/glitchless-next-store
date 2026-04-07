@@ -6,7 +6,7 @@ type FormInputNumberProps = {
   defaultValue?: number;
 };
 
-function PriceInput({ defaultValue }: FormInputNumberProps) {
+export const PriceInput = ({ defaultValue }: FormInputNumberProps) => {
   return (
     <div className="mb-2">
       <Label htmlFor={name} className="capitalize">
@@ -22,5 +22,4 @@ function PriceInput({ defaultValue }: FormInputNumberProps) {
       />
     </div>
   );
-}
-export default PriceInput;
+};

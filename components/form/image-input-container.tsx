@@ -2,9 +2,9 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
-import FormContainer from './FormContainer';
-import ImageInput from './ImageInput';
-import { SubmitButton } from './Buttons';
+import { FormContainer } from './form-container';
+import { ImageInput } from './image-input';
+import { SubmitButton } from './buttons';
 import { type actionFunction } from '@/utils/types';
 
 type ImageInputContainerProps = {
@@ -15,7 +15,7 @@ type ImageInputContainerProps = {
   children?: React.ReactNode;
 };
 
-const ImageInputContainer = (props: ImageInputContainerProps) => {
+export const ImageInputContainer = (props: ImageInputContainerProps) => {
   const { image, name, action, text } = props;
   const [isUpdateFormVisible, setUpdateFormVisible] = useState(false);
   return (
@@ -47,4 +47,3 @@ const ImageInputContainer = (props: ImageInputContainerProps) => {
     </div>
   );
 };
-export default ImageInputContainer;

@@ -12,8 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { IconButton } from '@/components/form/Buttons';
-import FormContainer from '@/components/form/FormContainer';
+import { FormContainer, IconButton } from '@/components/form';
 
 async function AdminProductsPage() {
   const items = await fetchAdminProducts();

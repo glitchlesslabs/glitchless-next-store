@@ -1,7 +1,7 @@
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 
-function ImageInput() {
+export const ImageInput = () => {
   const name = 'image';
 
   return (
@@ -12,5 +12,4 @@ function ImageInput() {
       <Input id={name} name={name} type="file" required accept="image/*" />
     </div>
   );
-}
-export default ImageInput;
+};

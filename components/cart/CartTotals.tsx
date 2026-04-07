@@ -2,8 +2,8 @@ import { Card, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { formatCurrency } from '@/utils/format';
 import { createOrderAction } from '@/utils/actions';
-import FormContainer from '../form/FormContainer';
-import { SubmitButton } from '../form/Buttons';
+import { FormContainer } from '../form';
+import { SubmitButton } from '../form/buttons';
 import { Cart } from '../../generated/prisma/client';
 
 function CartTotals({ cart }: { cart: Cart }) {

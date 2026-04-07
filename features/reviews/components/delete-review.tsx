@@ -1,5 +1,4 @@
-import { IconButton } from '@/components/form/Buttons';
-import FormContainer from '@/components/form/FormContainer';
+import { FormContainer, IconButton } from '@/components/form';
 import { deleteReviewAction } from '../actions';
 
 export default function DeleteReview({ reviewId }: { reviewId: string }) {

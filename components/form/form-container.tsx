@@ -8,13 +8,13 @@ const initialState = {
   message: '',
 };
 
-function FormContainer({
+export const FormContainer = ({
   action,
   children,
 }: {
   action: actionFunction;
   children: React.ReactNode;
-}) {
+}) => {
   const [state, formAction] = useActionState(action, initialState);
 
   useEffect(() => {
@@ -24,5 +24,4 @@ function FormContainer({
   }, [state]);
 
   return <form action={formAction}>{children}</form>;
-}
-export default FormContainer;
+};

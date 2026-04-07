@@ -1,15 +1,17 @@
 import {
+  CheckboxInput,
+  FormContainer,
+  FormInput,
+  ImageInputContainer,
+  PriceInput,
+  SubmitButton,
+  TextAreaInput,
+} from '@/components/form';
+import {
   fetchAdminProductDetails,
   updateProductAction,
   updateProductImageAction,
 } from '@/utils/actions';
-import FormContainer from '@/components/form/FormContainer';
-import FormInput from '@/components/form/FormInput';
-import PriceInput from '@/components/form/PriceInput';
-import TextAreaInput from '@/components/form/TextAreaInput';
-import { SubmitButton } from '@/components/form/Buttons';
-import CheckboxInput from '@/components/form/CheckboxInput';
-import ImageInputContainer from '@/components/form/ImageInputContainer';
 
 async function EditProductPage({ params }: { params: { id: string } }) {
   const { id } = await params;

@@ -16,11 +16,11 @@ type SubmitButtonProps = {
   size?: btnSize;
 };
 
-export function SubmitButton({
+export const SubmitButton = ({
   className = '',
   text = 'submit',
   size = 'lg',
-}: SubmitButtonProps) {
+}: SubmitButtonProps) => {
   const { pending } = useFormStatus();
 
   return (
@@ -40,7 +40,7 @@ export function SubmitButton({
       )}
     </Button>
   );
-}
+};
 
 type actionType = 'edit' | 'delete';
 
