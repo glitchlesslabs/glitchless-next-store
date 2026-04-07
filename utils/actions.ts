@@ -1,7 +1,7 @@
 'use server';
 
 import db from '@/utils/db';
-import { auth, currentUser, clerkMiddleware } from '@clerk/nextjs/server';
+import { currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import {
   imageSchema,
@@ -12,24 +12,13 @@ import {
 import { deleteImage, uploadImage } from './supabase';
 import { revalidatePath } from 'next/cache';
 import { Cart } from '../generated/prisma/client';
-
-const getAuthUser = async () => {
-  const user = await currentUser();
-  if (!user) redirect('/');
-  return user;
-};
+import { getAuthUser } from '../lib/auth';
+import { renderError } from '../lib/utils';
 
 const getAdminUser = async () => {
   const user = await getAuthUser();
-  if (user.id !== process.env.ADMIN_USER_ID) redirect('/');
+  if (user?.userId !== process.env.ADMIN_USER_ID) redirect('/');
   return user;
-};
-
-const renderError = (error: unknown): { message: string } => {
-  console.log(error);
-  return {
-    message: error instanceof Error ? error.message : 'An error occurred',
-  };
 };
 
 export const fetchFeaturedProducts = async () => {
@@ -182,65 +171,6 @@ export const updateProductImageAction = async (
   }
 };
 
-export const fetchFavoriteId = async ({ productId }: { productId: string }) => {
-  const user = await getAuthUser();
-  try {
-    const favorite = await db.favorite.findFirst({
-      where: {
-        productId,
-        clerkId: user.id,
-      },
-      select: {
-        id: true,
-      },
-    });
-    return favorite?.id || null;
-  } catch (error) {
-    renderError(error);
-  }
-};
-
-export const toggleFavoriteAction = async (prevState: {
-  productId: string;
-  favoriteId: string | null | undefined;
-  pathname: string;
-}) => {
-  const user = await getAuthUser();
-  const { productId, favoriteId, pathname } = prevState;
-
-  try {
-    if (favoriteId) {
-      await db.favorite.delete({
-        where: { id: favoriteId },
-      });
-    } else {
-      await db.favorite.create({
-        data: {
-          productId: productId,
-          clerkId: user.id,
-        },
-      });
-    }
-    revalidatePath(pathname);
-    return { message: favoriteId ? 'removed from faves' : 'added to faves' };
-  } catch (error) {
-    return renderError(error);
-  }
-};
-
-export const fetchUserFavorites = async () => {
-  const user = await getAuthUser();
-  const favorites = await db.favorite.findMany({
-    where: {
-      clerkId: user.id,
-    },
-    include: {
-      product: true,
-    },
-  });
-  return favorites;
-};
-
 export const createReviewAction = async (
   _prevState: any,
   formData: FormData
@@ -253,7 +183,7 @@ export const createReviewAction = async (
     await db.review.create({
       data: {
         ...validatedFields,
-        clerkId: user.id,
+        clerkId: user.userId!,
       },
     });
 
@@ -300,7 +230,7 @@ export const fetchProductReviewsByUser = async () => {
   const user = await getAuthUser();
   const reviews = await db.review.findMany({
     where: {
-      clerkId: user.id,
+      clerkId: user.userId!,
     },
     select: {
       id: true,
@@ -324,7 +254,7 @@ export const deleteReviewAction = async (prevState: { reviewId: string }) => {
     await db.review.delete({
       where: {
         id: reviewId,
-        clerkId: user.id,
+        clerkId: user.userId!,
       },
     });
     revalidatePath('/reviews');
@@ -343,10 +273,10 @@ export const findExistingReview = async (userId: string, productId: string) => {
 };
 
 export const fetchCartItems = async () => {
-  const user = await currentUser();
+  const user = await getAuthUser();
   const cart = await db.cart.findFirst({
     where: {
-      clerkId: user?.id ?? '',
+      clerkId: user?.userId ?? '',
     },
     select: {
       numItemsInCart: true,
@@ -497,7 +427,7 @@ export const removeCartItemAction = async (
   try {
     const cartItemId = formData.get('id') as string;
     const cart = await fetchOrCreateCart({
-      userId: user.id,
+      userId: user.userId!,
       errorOnFailure: true,
     });
     await db.cartItem.delete({
@@ -524,7 +454,7 @@ export const updateCartItemAction = async ({
   const user = await getAuthUser();
   try {
     const cart = await fetchOrCreateCart({
-      userId: user.id,
+      userId: user.userId!,
       errorOnFailure: true,
     });
 
@@ -549,31 +479,32 @@ export const updateCartItemAction = async ({
 };
 
 export const createOrderAction = async (prevState: any, formData: FormData) => {
-  const user = await getAuthUser();
+  await getAuthUser();
+  const user = await currentUser();
   let orderId: null | string = null;
   let cartId: null | string = null;
   try {
     const cart = await fetchOrCreateCart({
-      userId: user.id,
+      userId: user!.id,
       errorOnFailure: true,
     });
     cartId = cart.id;
 
     await db.order.deleteMany({
       where: {
-        clerkId: user.id,
+        clerkId: user!.id,
         isPaid: false,
       },
     });
 
     const order = await db.order.create({
       data: {
-        clerkId: user.id,
+        clerkId: user!.id,
         products: cart.numItemsInCart,
         orderTotal: cart.orderTotal,
         tax: cart.tax,
         shipping: cart.shipping,
-        email: user.emailAddresses[0].emailAddress,
+        email: user!.emailAddresses[0].emailAddress,
       },
     });
     orderId = order.id;
@@ -587,7 +518,7 @@ export const fetchUserOrders = async () => {
   const user = await getAuthUser();
   const orders = await db.order.findMany({
     where: {
-      clerkId: user.id,
+      clerkId: user.userId!,
       isPaid: true,
     },
     orderBy: {
@@ -598,7 +529,7 @@ export const fetchUserOrders = async () => {
 };
 
 export const fetchAdminOrders = async () => {
-  const user = await getAdminUser();
+  await getAdminUser();
   const orders = await db.order.findMany({
     where: {
       isPaid: true,
