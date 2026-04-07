@@ -1,9 +1,9 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { FormContainer } from '../form';
+import { FormContainer } from '../../../components/form';
 import { toggleFavoriteAction } from '@/features/favorites/actions';
-import { CardSubmitButton } from '../form/buttons';
+import { CardSubmitButton } from '../../../components/form/buttons';
 
 type FavoriteToggleFormProps = {
   productId: string;

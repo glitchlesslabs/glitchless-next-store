@@ -24,9 +24,9 @@ type SelectCartItemAmountProps = {
   isLoading: boolean;
 };
 
-function SelectProductAmount(
+export const SelectProductAmount = (
   props: SelectProductAmountProps | SelectCartItemAmountProps
-) {
+) => {
   const { mode, amount, setAmount } = props;
   const cartItem = mode === Mode.CartItem;
 
@@ -54,5 +54,4 @@ function SelectProductAmount(
       </Select>
     </>
   );
-}
-export default SelectProductAmount;
+};

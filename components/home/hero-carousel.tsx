@@ -27,7 +27,7 @@ export const HeroCarousel = () => {
                     <Image
                       src={image}
                       alt="hero"
-                      className="h-[24rem] w-full rounded-md object-cover"
+                      className="h-96 w-full rounded-md object-cover"
                     />
                   </CardContent>
                 </Card>

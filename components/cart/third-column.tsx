@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
-import SelectProductAmount from '../single-product/SelectProductAmount';
-import { Mode } from '../single-product/SelectProductAmount';
+import { SelectProductAmount } from '../single-product/select-product-amount';
+import { Mode } from '../single-product/select-product-amount';
 import { FormContainer } from '../form';
 import { SubmitButton } from '../form/buttons';
 import { removeCartItemAction, updateCartItemAction } from '@/utils/actions';

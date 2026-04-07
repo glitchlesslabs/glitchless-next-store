@@ -1,5 +1,5 @@
 import { SectionTitle } from '@/components/global';
-import ProductsGrid from '@/components/products/ProductsGrid';
+import { ProductsGrid } from '@/components/products';
 import { fetchUserFavorites } from '@/features/favorites/queries';
 
 async function FavoritesPage() {

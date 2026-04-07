@@ -16,7 +16,13 @@ import {
   LinkedinIcon,
 } from 'react-share';
 
-function ShareButton({ productId, name }: { productId: string; name: string }) {
+export const ShareButton = ({
+  productId,
+  name,
+}: {
+  productId: string;
+  name: string;
+}) => {
   const url = process.env.NEXT_PUBLIC_WEBSITE_URL;
   const shareLink = `${url}/products/${productId}`;
   return (
@@ -30,7 +36,7 @@ function ShareButton({ productId, name }: { productId: string; name: string }) {
         side="top"
         align="end"
         sideOffset={10}
-        className="flex flex-row w-full items-center justify-center gap-x-2"
+        className="flex w-full flex-row items-center justify-center gap-x-2"
       >
         <XShareButton url={shareLink} title={name}>
           <XIcon size={32} round />
@@ -44,5 +50,4 @@ function ShareButton({ productId, name }: { productId: string; name: string }) {
       </PopoverContent>
     </Popover>
   );
-}
-export default ShareButton;
+};

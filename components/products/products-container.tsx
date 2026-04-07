@@ -1,18 +1,18 @@
-import ProductsGrid from './ProductsGrid';
-import ProductsList from './ProductsList';
+import { ProductsGrid } from './products-grid';
+import { ProductsList } from './products-list';
 import { LuLayoutGrid, LuList } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { fetchAllProducts } from '@/utils/actions';
 import Link from 'next/link';
 
-async function ProductsContainer({
+export const ProductsContainer = async ({
   layout,
   search,
 }: {
   layout: string;
   search: string;
-}) {
+}) => {
   const products = await fetchAllProducts({ search });
   const totalProducts = products.length;
   const searchTerm = search ? `&search=${search}` : '';
@@ -61,5 +61,4 @@ async function ProductsContainer({
       </div>
     </>
   );
-}
-export default ProductsContainer;
+};
